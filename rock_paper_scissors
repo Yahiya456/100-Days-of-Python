@@ -31,14 +31,18 @@ import random
 
 option = [rock, paper, scissors]
 choice = int(input("Enter 0 for Rock, 1 for Paper, or 2 for Scissors: "))
-computer = random.randint(0, 2)
 
-print(option[choice])
-print("Computer chosee:\n" + option[computer])
+if choice < 0 or choice > 2:
+  print("You typed an invalid number. You lose!")
+else:
+  computer = random.randint(0, 2)
 
-if (choice == 0 and computer == 0) or (choice == 1 and computer == 1) or (choice == 2 and computer == 2):
-  print("Draw")
-elif (choice == 0 and computer == 2) or (choice == 1 and computer == 0) or (choice == 2 and computer == 1):
-  print("You win")
-elif (choice == 0 and computer == 1) or (choice == 1 and computer == 2) or (choice == 2 and computer == 0):
-  print("You lose")
+  print(option[choice])
+  print("Computer chosee:\n" + option[computer])
+
+  if (choice == 0 and computer == 0) or (choice == 1 and computer == 1) or (choice == 2 and computer == 2):
+    print("Draw!")
+  elif (choice == 0 and computer == 2) or (choice == 1 and computer == 0) or (choice == 2 and computer == 1):
+    print("You win!")
+  elif (choice == 0 and computer == 1) or (choice == 1 and computer == 2) or (choice == 2 and computer == 0):
+    print("You lose!")
